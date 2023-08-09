@@ -1,233 +1,83 @@
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-
-
-## Horizontal Rules
-
-___
-
+---
+title: How to get Google news RSS feed URL ?
+taxonomy:
+    category: articles
 ---
 
-***
+Google news is a popular news aggregation service which is available in Google for a long time. It aggregates latest news across from multiple news sources and categorizes them based on trends, regions and topics.
 
+You can read the same Google news in your own RSS reader, display it in your [WordPress website using Super RSS Reader plugin](/wordpress-plugins/super-rss-reader-pro/), use automation services like IFTTT or Zapier to automate whenever any article is aggregated by Google news.
 
-## Typographic replacements
+You can get Google news RSS feed URL for top stories, by topic, geo location and even by language. Follow this article below to find the feed URL as needed.
 
-Enable typographer option to see result.
+## For top stories
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+The RSS feed for top stories is the simplest one. Just append `RSS` to the `https://news.google.com` and you get the RSS feed of the top stories of your location.
 
-test.. test... test..... test?..... test!....
+    https://news.google.com/rss
 
-!!!!!! ???? ,,  -- ---
+## By topic
 
-"Smartypants, double quotes" and 'single quotes'
+![Google news rss feed by topic](/_images/google-news-rss-feed-1.png) {.wp-post-image}
 
+To get the RSS feed by topic, simply visit the topic you want i.e Business, Sports, Technology like below and append `\rss` next to `news.google.com`. The resultant URL is the RSS feed of that topic.
 
-## Emphasis
+You can apply the same to any topic you find on Google news. This will display the latest news in that topic.
 
-**This is bold text**
+Topic ID is something which look like this `CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pKVGlnQVAB` which can be seen in the URL.
 
-__This is bold text__
+    https://news.google.com/rss/topics/<TOPIC_ID>
 
-*This is italic text*
+__Example__
 
-_This is italic text_
+Here I have navigated to "technology" topic and adding `/rss` next to `news.google.com` is the RSS feed of that topic.
 
-~~Strikethrough~~
+__RSS URL__
 
+    https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pKVGlnQVAB
 
-## Blockquotes
+## By section under a topic
 
+Similar to getting the RSS feed of a topic, the same technique can be applies to get the RSS feed URL of the particular section of a topic.
 
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
+Simply navigate to the tab/section you want the RSS feed for and append `/rss` next to `news.google.com` and you get the RSS feed URL for that section.
 
+    https://news.google.com/rss/topics/<TOPIC_ID>/sections/<SECTION_ID>
 
-## Lists
+__Example__
 
-Unordered
+    https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pKVGlnQVAB/sections/CAQiSkNCQVNNUW9JTDIwdk1EWnVkR29TQldWdUxVZENHZ0pKVGlJT0NBUWFDZ29JTDIwdk1EZGljekFxQ2dvSUVnWlVaVzV1YVhNb0FBKi4IACoqCAoiJENCQVNGUW9JTDIwdk1EWnVkR29TQldWdUxVZENHZ0pKVGlnQVABUAE?hl=en-IN&gl=IN&ceid=IN%3Aen
 
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
+## By custom search keyword
 
-Ordered
+In case you want to read RSS feed which has particular keyword then you can use below format
 
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
+    https://news.google.com/rss/search?q=<KEYWORD>
 
+Here, replace `keyword` with the keyword you want the RSS feed for. For example if you want to RSS feed for Google news articles with the word `instagram` then the URL will be below.
 
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
+    https://news.google.com/rss/search?q=instagram
 
-Start numbering with offset:
+## By country and language
 
-57. foo
-1. bar
+You might have noticed that Google appends additional URL parameters like `hl`, `gl` and `ceid` to the google news URL. These are the parameters which decide the language, geo location the display the news for.
 
+These parameters apply to any RSS feed above mentioned. The key is to change the language and country code as needed.
 
-## Code
+    https://news.google.com/rss?hl=<LANGUAGE_CODE>&gl=<COUNTRY_CODE>&ceid=<COUNTRY_CODE>:<LANGUAGE_CODE>
 
-Inline `code`
+Here replace `LANGUAGE_CODE` and `COUNTRY_CODE` with the code of the language and country respectively you are looking for. You can find these code in [this page](https://www.fincher.org/Utilities/CountryLanguageList.shtml)
 
-Indented code
+__Example__
 
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+    https://news.google.com/rss?hl=ta&gl=IN&ceid=IN:ta
 
+In this example, country is India and language is Tamil. It is to note that Google news may not support all the available country and language codes.
 
-Block code "fences"
+## Displaying the RSS feed in WordPress
 
-```
-Sample text here...
-```
+In case you want to display Google News in your self hosted WordPress website, then you can install a plugin called Super RSS Reader. This plugin allows you to display any RSS feed. With the above method you can get the RSS feed for Google news and use it with the plugin.
 
-Syntax highlighting
+The [free version](https://wordpress.org/plugins/super-rss-reader/) allows to display any RSS feed in widget whereas the [PRO version](/wordpress-plugins/super-rss-reader-pro/) can display RSS feed in both widget and inside posts/pages using shortcodes.
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-Right aligned columns
-
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+Check out more about [Super RSS Reader](/wordpress-plugins/super-rss-reader/) to display RSS feed in your website.
